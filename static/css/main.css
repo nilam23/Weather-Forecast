@@ -1,0 +1,18 @@
+.container {
+    margin-top: 70px;
+    text-align: center;
+}
+.no-border {
+    border: 0;
+}
+#input {
+    text-align: center;
+}
+#unique {
+    font-size: medium;
+    max-width: 300px;
+    border: 1px solid rgba(211, 211, 211, 0.3);
+    border-radius: 7px;
+    padding: 0;
+    margin: 60px auto;
+}

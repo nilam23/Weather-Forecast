@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="icon" href="./static/storm.png">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+
+<body>
+
+    <div id="input" class="w3-container w3-teal">
+        <h1>Find a Forecast</h1>
+    </div>
+
+    <div class="container">
+        <form class="form-inline" name="passdata" action="." method="post">
+            <input id="input" type="text" class="form-control no-border" name="city_name" placeholder="Enter city name">
+            <button class="w3-button w3-round w3-tiny w3-teal" type="submit">Get Forecast</button>
+        </form>
+    </div>
+
+    <div id="unique" class="container">
+        <span class="title">
+            <strong>{{ weather.city }}, {{ weather.country }}</strong>
+        </span>
+        <br>
+        <span class="subtitle"><strong>{{ weather.temperature }}° F</strong></span>
+        <br>
+        <em><strong>{{ weather.description }}</strong></em>
+        <figure class="image is-50x50">
+            <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+        </figure>
+    </div>
+
+</body>
+
+</html>
