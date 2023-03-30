@@ -18,22 +18,29 @@
 
     <div class="container">
         <form class="form-inline" name="passdata" action="." method="post">
-            <input id="input" type="text" class="form-control no-border" name="city_name" placeholder="Enter city name">
+            <input id="input" type="text" class="form-control no-border" name="city_name" placeholder="Enter city name" required>
             <button class="w3-button w3-round w3-tiny w3-teal" type="submit">Get Forecast</button>
         </form>
     </div>
 
     <div id="unique" class="container">
-        <span class="title">
-            <strong>{{ weather.city }}, {{ weather.country }}</strong>
-        </span>
-        <br>
-        <span class="subtitle"><strong>{{ weather.temperature }}° F</strong></span>
-        <br>
-        <em><strong>{{ weather.description }}</strong></em>
-        <figure class="image is-50x50">
-            <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
-        </figure>
+        {% if weather %}
+            <span class="title">
+                <strong>{{ weather.city }}, {{ weather.country }}</strong>
+            </span>
+            <br>
+            <span class="subtitle"><strong>{{ weather.temperature }}° F</strong></span>
+            <br>
+            <em><strong>{{ weather.description }}</strong></em>
+            <figure class="image is-50x50">
+                <img src="http://openweathermap.org/img/w/{{ weather.icon }}.png" alt="Image">
+            </figure>
+
+        {% else %}
+            <span class="title">
+                <strong>Forecast not found</strong>
+            </span>
+            {% endif %}
     </div>
 
 </body>
